@@ -54,6 +54,8 @@ params:
   notice: "24478f"
 
   alwaysKeepBrandColor: true
+  
+  googleAnalytics: UA-00000000-1
 
 
 theme: cstate
