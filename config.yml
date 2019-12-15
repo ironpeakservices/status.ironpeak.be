@@ -20,7 +20,7 @@ params:
   shortDateFormat: 15:04 — Jan 2
 
   useLargeHeaderDesign: false
-  useLogo: false
+  useLogo: true
   logo: /logo.png
 
   description: We continuously monitor the status of our services and if there are any interruptions, a note will be posted here.
