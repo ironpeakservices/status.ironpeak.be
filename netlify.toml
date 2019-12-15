@@ -3,9 +3,6 @@
     publish = "public"
     functions = "functions"
 
-[build.environment]
-    HUGO_VERSION = "0.48"
-
 [context.production.environment]
     HUGO_ENV = "production"
     NODE_ENV = "production"
@@ -15,3 +12,14 @@
 
 [context.branch-deploy]
     command = "hugo -b $DEPLOY_PRIME_URL"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload;"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "origin"
+    Feature-Policy = "geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; fullscreen 'none'; payment 'none';"
+    Content-Security-Policy = "default-src 'none'; base-uri 'self'; manifest-src 'self'; script-src 'self'; style-src 'self'; img-src data:; font-src 'self'"
